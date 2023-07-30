@@ -165,6 +165,13 @@ class aio_keyboard:
     ])
     return keyboard
 
+  async def auto_join_keys(self):
+    keyboard = types.InlineKeyboardMarkup(row_width=2)
+    keyboard.add(*[
+      {'text': 'Начать общение', 'callback_data': 'set_dialog'}
+    ])
+
+
   async def start_chat(self, type='gpt', v='', ratio=''):
     keyboard = types.ReplyKeyboardMarkup(resize_keyboard=True, row_width=4)
 
